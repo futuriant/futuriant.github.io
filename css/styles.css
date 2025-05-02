@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #EEEAE3;
+  color: #111;
+  line-height: 1.6;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  font-size: 0.875rem;
+}
+
+.nav-logo {
+  height: 66px;
+  width: auto;
+}
+
+nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #111;
+  transition: color 0.2s ease-in-out;
+}
+
+nav a:hover {
+  color: #666;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.logo {
+  position: absolute;
+  z-index: 2;
+  width: 128px;
+  height: auto;
+  /* Position in the center of the aura circle above the heads */
+  top: 23%;
+  left: 51%; /* Adjust this value to move left/right: <50% moves left, >50% moves right */
+  transform: translateX(-50%);
+}
+
+.hero-image {
+  max-width: 80%;
+  height: auto;
+  z-index: 1;
+}
+
+/* Media queries for responsive images */
+@media (max-width: 768px) {
+  .hero-image {
+    max-width: 70%;
+  }
+  
+  .logo {
+    width: 100px;
+    /* Adjust position for tablet */
+    top: 22%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-image {
+    max-width: 60%;
+  }
+  
+  .logo {
+    width: 80px;
+    /* Adjust position for mobile */
+    top: 19%;
+  }
+}
+
+.text-block {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.button-link {
+  display: inline-block;
+  margin: 2rem;
+  padding: 2rem 3rem;
+  font-size: 1.25rem;
+  text-decoration: none;
+  background: #111;
+  color: #EEEAE3;
+  border: none;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.button-link:hover {
+  background: #333;
+}
