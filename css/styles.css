@@ -48,10 +48,11 @@ nav a:hover {
 .logo {
   position: absolute;
   z-index: 2;
-  width: 128px;
+  /* Base size that will scale down with viewport width */
+  width: min(128px, 16vw);
   height: auto;
   /* Position in the center of the aura circle above the heads */
-  top: 23%;
+  top: 22%;
   left: 51%; /* Adjust this value to move left/right: <50% moves left, >50% moves right */
   transform: translateX(-50%);
 }
@@ -63,15 +64,30 @@ nav a:hover {
 }
 
 /* Media queries for responsive images */
+@media (max-width: 900px) {
+  .logo {
+    /* Continuous scaling with a minimum size */
+    width: min(120px, 15vw);
+    top: 22%;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-image {
     max-width: 70%;
   }
   
   .logo {
-    width: 100px;
+    width: min(100px, 14vw);
     /* Adjust position for tablet */
-    top: 22%;
+    top: 21%;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo {
+    width: min(90px, 13vw);
+    top: 20%;
   }
 }
 
@@ -81,7 +97,7 @@ nav a:hover {
   }
   
   .logo {
-    width: 80px;
+    width: min(80px, 12vw);
     /* Adjust position for mobile */
     top: 19%;
   }
