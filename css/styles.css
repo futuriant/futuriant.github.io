@@ -12,11 +12,23 @@ nav {
   align-items: center;
   padding: 1rem 2rem;
   font-size: 0.875rem;
+  position: relative;
+}
+
+.logo-text {
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  z-index: 5;
 }
 
 .nav-logo {
   height: 50px;
   width: auto;
+}
+
+.nav-links {
+  margin-left: auto;
 }
 
 nav a {
@@ -124,4 +136,98 @@ nav a:hover {
 
 .button-link:hover {
   background: #333;
+}
+
+/* Project Cards Styling */
+.projects-section {
+  margin-top: 4rem;
+}
+
+.project-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 1rem);
+  max-width: 480px; /* Increased width */
+  height: 450px; /* Increased height */
+  background-color: #E5E0D5; /* Slightly darker than the site background */
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #111;
+  transition: all 0.3s ease;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+  height: 65%;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(100%); /* Black and white by default */
+  transition: all 0.4s ease;
+  position: relative;
+  background-size: cover;
+}
+
+.project-card:hover .project-image {
+  filter: grayscale(0%) saturate(100%); /* Full color on hover */
+}
+
+/* Specific project images */
+.traxion-image {
+  background-image: url('../images/traxion-button-bg.png');
+}
+
+.imagineconomy-image {
+  background-image: url('../images/imagineconomy-button-bg.png');
+}
+
+.project-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 40%;
+}
+
+.project-title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.project-description {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .project-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .project-card {
+    width: 100%;
+    max-width: 100%;
+  }
 }
